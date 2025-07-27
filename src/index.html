@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body class="bg-white dark:bg-gray-900">
+    <section
+      class="container rounded-2xl w-1/2 h-screen bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% flex flex-col items-center mx-auto max-w-3/4 dark:from-gray-700 dark:via-gray-800 dark:to-gray-900"
+    >
+      <h1 class="text-4xl my-10 text-center text-gray-900 dark:text-white">
+        Weather App
+      </h1>
+      <div>
+        <div class="search flex gap-2">
+          <input
+            class="city-input rounded-2xl p-2 bg-amber-50 dark:bg-gray-800 dark:text-white"
+            placeholder="City Name"
+            type="text"
+          />
+          <a
+            href="#"
+            class="search-btn bg-amber-50 rounded-4xl w-10 search-btn dark:bg-gray-800"
+            ><i
+              class="fa-solid fa-magnifying-glass fa-beat-fade text-2xl pt-2 pl-2 text-gray-900 dark:text-white"
+            ></i
+          ></a>
+        </div>
+        <div class="flex flex-col gap-2 text-center my-12">
+          <img
+            src="../assets/img/clear.png"
+            class="weather-icon w-1/2 mx-auto"
+            alt="weather icon"
+          />
+          <h1 class="text-4xl tremp text-gray-900 dark:text-white">22 °C</h1>
+          <h1 class="text-4xl mb-5 display-city text-gray-900 dark:text-white">
+            New York
+          </h1>
+
+          <div class="flex gap-2">
+            <div class="flex gap-2">
+              <img
+                src="../assets/img/humidity.png"
+                alt="humidity icon"
+                class="w-1/5 h-9"
+              />
+              <div class="flex flex-col gap-2">
+                <h1 class="text-2xl humidity text-gray-900 dark:text-white">
+                  53%
+                </h1>
+                <h1 class="text-gray-900 dark:text-white">humidity</h1>
+              </div>
+            </div>
+            <div class="flex justify-between gap-2">
+              <img
+                src="../assets/img/wind.png"
+                alt="humidity icon"
+                class="w-1/5 h-9"
+              />
+              <div class="flex flex-col gap-2">
+                <h1 class="text-2xl wind-speed text-gray-900 dark:text-white">
+                  5.66 km/h
+                </h1>
+                <h1 class="text-gray-900 dark:text-white">Wind Speed</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </section>
+  </body>
+  <script src="../node_modules/axios/dist/axios.min.js"></script>
+  <script src="index.js" type="module"></script>
+</html>
