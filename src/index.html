@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="output.css" />
+    <link rel="stylesheet" href="button.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -26,9 +27,33 @@
     <section
       class="container rounded-2xl w-1/2 h-screen bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% flex flex-col items-center mx-auto max-w-3/4 dark:from-gray-700 dark:via-gray-800 dark:to-gray-900"
     >
-      <h1 class="text-4xl my-10 text-center text-gray-900 dark:text-white">
-        Weather App
-      </h1>
+      <div class="flex justify-around">
+        <h1 class="text-4xl my-10 text-center text-gray-900 dark:text-white">
+          Weather App
+        </h1>
+        <div
+          aria-label="User Login Button"
+          tabindex="0"
+          role="button"
+          class="user-profile theme-switcher"
+        >
+          <div class="user-profile-inner">
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g data-name="Layer 2" id="Layer_2">
+                <path
+                  d="m15.626 11.769a6 6 0 1 0 -7.252 0 9.008 9.008 0 0 0 -5.374 8.231 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 9.008 9.008 0 0 0 -5.374-8.231zm-7.626-4.769a4 4 0 1 1 4 4 4 4 0 0 1 -4-4zm10 14h-12a1 1 0 0 1 -1-1 7 7 0 0 1 14 0 1 1 0 0 1 -1 1z"
+                ></path>
+              </g>
+            </svg>
+            <p>light</p>
+          </div>
+        </div>
+      </div>
+
       <div>
         <div class="search flex gap-2">
           <input
@@ -36,13 +61,27 @@
             placeholder="City Name"
             type="text"
           />
-          <a
-            href="#"
-            class="search-btn bg-amber-50 rounded-4xl w-10 search-btn dark:bg-gray-800"
-            ><i
-              class="fa-solid fa-magnifying-glass fa-beat-fade text-2xl pt-2 pl-2 text-gray-900 dark:text-white"
-            ></i
-          ></a>
+          <div
+            aria-label="User Login Button"
+            tabindex="0"
+            role="button"
+            class="user-profile search-btn"
+          >
+            <div class="user-profile-inner">
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <g data-name="Layer 2" id="Layer_2">
+                  <path
+                    d="m15.626 11.769a6 6 0 1 0 -7.252 0 9.008 9.008 0 0 0 -5.374 8.231 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 9.008 9.008 0 0 0 -5.374-8.231zm-7.626-4.769a4 4 0 1 1 4 4 4 4 0 0 1 -4-4zm10 14h-12a1 1 0 0 1 -1-1 7 7 0 0 1 14 0 1 1 0 0 1 -1 1z"
+                  ></path>
+                </g>
+              </svg>
+              <p>Search</p>
+            </div>
+          </div>
         </div>
         <div class="flex flex-col gap-2 text-center my-12">
           <img
