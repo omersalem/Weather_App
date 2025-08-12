@@ -79,3 +79,29 @@ search.addEventListener("click", async () => {
   const weatherData = await getWeatherData(cityValue);
   updateWeatherData(weatherData);
 });
+
+const themeSwitcher = document.querySelector(".theme-switcher");
+const themeSwitcherText = document.querySelector(".theme-switcher p");
+
+themeSwitcher.addEventListener("click", () => {
+  const html = document.documentElement;
+  html.classList.toggle("dark");
+  if (html.classList.contains("dark")) {
+    localStorage.setItem("color-theme", "dark");
+    themeSwitcherText.textContent = "dark";
+  } else {
+    localStorage.setItem("color-theme", "light");
+    themeSwitcherText.textContent = "light";
+  }
+});
+
+// set the theme switcher text on page load
+if (
+  localStorage.getItem("color-theme") === "dark" ||
+  (!("color-theme" in localStorage) &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches)
+) {
+  themeSwitcherText.textContent = "dark";
+} else {
+  themeSwitcherText.textContent = "light";
+}
